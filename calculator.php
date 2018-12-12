@@ -1,29 +1,11 @@
 <?php
-echo multiply(25,5);
+Include("include/multiplyrec.php");
+Include("include/multiply.php");
+Include("include/add.php");
+Include("include/subtract.php");
+Include("include/factorial.php");
+Include("include/reverse.php");
 
-function multiply($a, $b) {
- if ($a < 1 || $b < 1) {
- return 0;
- } else {
- return multiply($a-1, $b) + $b;
-}
- }
-
-function add($number1, $number2){
-  $result = $number1 + $number2;
-  return $result;
-}
-
-function subtract($number1, $number2){
-  $result = $number1 - $number2;
-  return $result;
-}
-
-function factorial($number){
-  if($number < 1){
-    return 1;
-  }
-
-  return $number * factorial($number - 1);
-}
+echo factorial(5);
+//use add,subtract, multiply(rec), devide, reverse or factorial
  ?>
