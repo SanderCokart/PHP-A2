@@ -8,7 +8,7 @@
   <fieldset>
     <legend>calculator</legend>
       <form action="calculator.php" method="POST">
-        
+
         <select name="option">
           <option value="add">Add</option>
           <option value="subtract">Subtract</option>
@@ -16,12 +16,21 @@
           <option value="devide">Devide</option>
           <option value="factorial">Factorial</option>
           <option value="fib">Fibanaci</option>
+          <option value="checkalfa">Check if alfabetical</option>
+          <option value="numeric">Check if numeric</option>
+          <option value="checkpostcode">Check if valid postcode</option>
+          <option value="checkphone">Check if valid phone number</option>
+          <option value="checkgender">Check if gender is valid</option>
+          <option value="checkemail">Check if email is valid</option>
+          <option value="checkadres">Check if adres is valid</option>
         </select>
 
         <br>
 
-        <input type="number" name="firstfield">
-        <input type="number" name="secondfield">
+        <p>You can use these 2 inputs to do Addition, Subtraction, Multiplication, Devision, </p>
+        <input type="number" name="firstfield" value="0">
+        <input type="number" name="secondfield" value="0"><br>
+        <input type="text" name="check">
 
         <input type="submit" name="submit">
       </form>
