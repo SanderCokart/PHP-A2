@@ -94,7 +94,31 @@ switch ($option) {
     echo checkgender($check);
     break;
 
-  default:
+  case 'checkalfa':
+    echo checkalfa($check);
+    break;
+
+  case 'checknum':
+    echo checknum($check);
+    break;
+
+  case 'checkpostcode':
+    echo checkpostcode($check);
+    break;
+
+  case 'checkphone':
+    echo checkphone($check);
+    break;
+
+  case 'checkemail':
+    echo checkemail($check);
+    break;
+
+  case 'checkadres':
+    echo checkadres($check);
+    break;
+
+    default:
     echo "something went wrong...sorry";
     break;
   }
