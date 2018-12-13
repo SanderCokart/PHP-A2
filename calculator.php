@@ -1,11 +1,17 @@
 <?php
+$option = $_REQUEST['option'];
+// $firstfield = $_REQUEST['firstfield'];
+// $secondfield = $_REQUEST['secondfield'];
+$check = $_REQUEST['check'];
+
+
 Include("include/multiplyrec.php");
 Include("include/multiply.php");
+Include("include/devide.php");
 Include("include/add.php");
 Include("include/subtract.php");
 Include("include/factorial.php");
 Include("include/reverse.php");
-
 
 
 
@@ -77,5 +83,55 @@ function fib($input){
 //use echo add,echo subtract, echo multiply(rec), echo devide, echo reverse,
 //echo factorial, checkadres, checkgender, checkemail, checkphone, checkpostcode,
 //checknum, checkalfa or echo fib
-echo factorial(5)
+
+$options = array("add","subtract","multiply","devide","factorial","fib","reverse","multiplyrec","checkgender");
+
+  for ($i=0; $i < sizeof($options); $i++) {
+    if ($option == $options[$i]) {
+      echo $options[$i]($firstfield,$secondfield);
+    }
+  }
+
+// switch ($option) {
+//   case 'add':
+//     echo add($firstfield,$secondfield);
+//     break;
+//
+//   case 'subtract':
+//     echo subtract($firstfield,$secondfield);
+//     break;
+//
+//   case 'multiply':
+//     echo multiply($firstfield,$secondfield);
+//     break;
+//
+//   case 'devide':
+//     echo devide($firstfield,$secondfield);
+//     break;
+//
+//   case 'factorial':
+//     echo factorial($firstfield|$secondfield);
+//     break;
+//
+//   case 'fib':
+//     echo fib($firstfield|$secondfield);
+//     break;
+//
+//   case 'reverse':
+//     echo reverse($firstfield|$secondfield);
+//     break;
+//
+//   case 'multiplyrec':
+//     echo multiplyrec($firstfield|$secondfield);
+//     break;
+//
+//   case 'checkgender':
+//     echo checkgender($check);
+//     break;
+//
+//   default:
+//     echo "something went wrong...sorry";
+//     break;
+// }
+
  ?>
