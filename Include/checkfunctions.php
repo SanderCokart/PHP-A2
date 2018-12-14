@@ -35,6 +35,9 @@ function checkphone($input){
 function checkgender($input){
   if (preg_match("/^male\b|^female\b|^other\b|^trans\b|^trap\b/i", $input)) {
     echo "you are indeed a $input";
+    if ($input == "trap") {
+      echo "<br>greetings from lars";
+    }
   } else {
     echo "I guess you have no gender";
   }
