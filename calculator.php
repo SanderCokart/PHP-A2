@@ -20,34 +20,16 @@ Include("include/subtract.php");
 Include("include/factorial.php");
 Include("include/reverse.php");
 Include("include/checkfunctions.php");
+Include("include/fibonaci.php");
 
 choice($option_, $firstfield_,$secondfield_,$check_);
 
 // FUNCTIONS
-
-function fib($input){
-  $previous = -1;
-  $result = 1;
-  $sum = 0;
-  $resultarray = array();
-   for ($i=0; $i <= $input; $i++) {
-     $sum = $previous + $result;
-     $previous = $result;
-     $result= $sum;
-     $resultarray[$i] = $result;
-        echo ("Element $i = {$resultarray[$i]} <br>  \n");
-   }
-   echo "<br>the sequence is = ";
-   for ($i=0; $i <= $input; $i++) {
-     echo $resultarray[$i].", ";
-   }
-}
-
 //use echo add,echo subtract, echo multiply(rec), echo devide, echo reverse,
 //echo factorial, checkadres, checkgender, checkemail, checkphone, checkpostcode,
-//checknum, checkalfa or echo fib
+//checknum, checkalfa or echo fibonaci
 
-// $options = array("add","subtract","multiply","devide","factorial","fib","reverse","multiplyrec","checkgender");
+// $options = array("add","subtract","multiply","devide","factorial","fibonaci","reverse","multiplyrec","checkgender");
 //
 //   for ($i=0; $i < sizeof($options); $i++) {
 //     if ($option == $options[$i]) {
@@ -78,8 +60,8 @@ switch ($option) {
     echo factorial($firstfield|$secondfield);
     break;
 
-  case 'fib':
-    echo fib($firstfield|$secondfield);
+  case 'fibonaci':
+    echo fibonaci($firstfield|$secondfield);
     break;
 
   case 'reverse':
