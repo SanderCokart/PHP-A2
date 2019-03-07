@@ -1,7 +1,7 @@
 <?php
 
 function checkalfa($input){
-  if (preg_match("/[^a-z]/", $input)) {
+  if (preg_match("/[a-z]{1,}/i", $input)) {
     echo "its a match";
   } else {
     echo "its not a match";
@@ -9,7 +9,7 @@ function checkalfa($input){
   }
 
 function checknum($input){
-  if (preg_match("/[0-9]/", $input)) {
+  if (preg_match("/[0-9]{1,}/", $input)) {
     echo "your input is numeric";
   } else {
     echo "your input is not numeric";
@@ -17,7 +17,7 @@ function checknum($input){
 }
 
 function checkpostcode($input){
-  if (preg_match("/^[0-9]{4}[A-Z]{2}/", $input)) {
+  if (preg_match("/^[0-9]{4}[A-Z]{2}/i", $input)) {
     echo "your postcode is valid";
   } else {
     echo "your postcode is not valid";
@@ -25,10 +25,10 @@ function checkpostcode($input){
 }
 
 function checkphone($input){
-  if (preg_match("/^31[0-9]{9}|^06[0-9]{8}|^0591\s?[0-9{6}]/", $input)) {
-    echo "your phone number is valid in the netherlands";
+  if (preg_match("/^06[0-9]{8}$/", $input)) {
+    echo "your phone number is valid mobile number in the netherlands";
   } else {
-    echo "your phone number is NOT valid in the netherlands";
+    echo "your phone number is NOT valid mobile in the netherlands";
   }
 }
 

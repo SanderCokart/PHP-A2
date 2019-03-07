@@ -1,44 +1,30 @@
 <?php
 
-$option_ = $_REQUEST['option'];//selected option comes in from HTML FILE
 
-$firstfield_ =+ $_REQUEST['firstfield'];//this is the first numeric entry
-$secondfield_ =+ $_REQUEST['secondfield'];//this is the second numeric entry
-if (empty($firstfield_. $secondfield_)) {
+$option_ = $_POST['option'];//selected option comes in from HTML FILE
+$firstfield_ = $_POST['firstfield'];//this is the first numeric entry
+$secondfield_ = $_POST['secondfield'];//this is the second numeric entry
+
+if (empty($firstfield_)) {
   $firstfield_=0;
-  $secondfield_=0;
 }
-$check_ = $_REQUEST['check'];//this is where the check comes in
 
+if (empty($secondfield)) {
+  $secondfield=0;
+}
 
 //these are all the functions for add, devide, factorial, multiply, multiplyrec, reserve, subtract
 Include("include/multiplyrec.php");
 Include("include/multiply.php");
 Include("include/devide.php");
-Include("include /add.php");
+Include("include/add.php");
 Include("include/subtract.php");
 Include("include/factorial.php");
 Include("include/reverse.php");
-Include("include/checkfunctions.php");
-Include("include/fibonaci.php");
 
-choice($option_, $firstfield_,$secondfield_,$check_);
+choice($option_, $firstfield_,$secondfield_);
 
-// FUNCTIONS
-//use echo add,echo subtract, echo multiply(rec), echo devide, echo reverse,
-//echo factorial, checkadres, checkgender, checkemail, checkphone, checkpostcode,
-//checknum, checkalfa or echo fibonaci
-
-// $options = array("add","subtract","multiply","devide","factorial","fibonaci","reverse","multiplyrec","checkgender");
-//
-//   for ($i=0; $i < sizeof($options); $i++) {
-//     if ($option == $options[$i]) {
-//       echo $options[$i]($firstfield,$secondfield);
-//     }
-//   }
-
-
-function choice($option, $firstfield, $secondfield, $check){
+function choice($option, $firstfield, $secondfield){
 switch ($option) {
   case 'add':
     echo add($firstfield,$secondfield);
@@ -60,8 +46,8 @@ switch ($option) {
     echo factorial($firstfield|$secondfield);
     break;
 
-  case 'fibonaci':
-    echo fibonaci($firstfield|$secondfield);
+  case 'fibonacci':
+    echo fibonacci($firstfield|$secondfield);
     break;
 
   case 'reverse':
@@ -70,34 +56,6 @@ switch ($option) {
 
   case 'multiplyrec':
     echo multiplyrec($firstfield|$secondfield);
-    break;
-
-  case 'checkgender':
-    echo checkgender($check);
-    break;
-
-  case 'checkalfa':
-    echo checkalfa($check);
-    break;
-
-  case 'checknum':
-    echo checknum($check);
-    break;
-
-  case 'checkpostcode':
-    echo checkpostcode($check);
-    break;
-
-  case 'checkphone':
-    echo checkphone($check);
-    break;
-
-  case 'checkemail':
-    echo checkemail($check);
-    break;
-
-  case 'checkadres':
-    echo checkadres($check);
     break;
 
     default:
