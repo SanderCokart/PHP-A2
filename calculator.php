@@ -5,15 +5,15 @@ $option_ = $_POST['option'];//selected option comes in from HTML FILE
 $firstfield_ = $_POST['firstfield'];//this is the first numeric entry
 $secondfield_ = $_POST['secondfield'];//this is the second numeric entry
 
-if (empty($firstfield_)) {
+if (empty($firstfield_)) {//if not set then = 0
   $firstfield_=0;
 }
 
-if (empty($secondfield)) {
+if (empty($secondfield)) {//if not set then = 0
   $secondfield=0;
 }
 
-//these are all the functions for add, devide, factorial, multiply, multiplyrec, reserve, subtract
+//these are all the functions for add, devide, factorial, multiply, multiplyrecursive, reserve, subtract
 Include("include/multiplyrec.php");
 Include("include/multiply.php");
 Include("include/devide.php");
@@ -24,7 +24,7 @@ Include("include/reverse.php");
 
 choice($option_, $firstfield_,$secondfield_);
 
-function choice($option, $firstfield, $secondfield){
+function choice($option, $firstfield, $secondfield){//this will calculate with a switch which option you picked and execute it.
 switch ($option) {
   case 'add':
     echo add($firstfield,$secondfield);

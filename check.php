@@ -2,11 +2,11 @@
     Include("include/checkfunctions.php");
 
 
-    $check = $_POST['check'];
-    $option = $_POST['option'];
+    $check = $_POST['check'];//the item to check from the form
+    $option = $_POST['option'];//the option that determines what you want to check
 
 
-    switch ($option) {
+    switch ($option) {//this switch will check what sort of check you want to do
         case 'checkgender':
           echo checkgender($check);
           break;
@@ -36,7 +36,7 @@
           break;
 
         default:
-            // code...
+            echo "something went wrong.....try again please";
             break;
     }
  ?>
