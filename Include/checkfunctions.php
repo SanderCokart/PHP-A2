@@ -58,5 +58,4 @@ function checkadres($input){
     return "this adres is invalid!";
   }
 }
-
- ?>
+?>
